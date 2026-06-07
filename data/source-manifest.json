@@ -1,0 +1,66 @@
+{
+  "project": "language-test-checker",
+  "dataPolicy": {
+    "rawNormTables": "Keep raw norm tables and full manuals out of a public GitHub repository unless publication rights are confirmed.",
+    "recommendedStorage": "Use normalized data files only after confirming the repository is private or the data is cleared for publication.",
+    "runtimePlan": "The app should load normalized JSON or CSV files from data/ after conversion and validation."
+  },
+  "assessments": [
+    {
+      "code": "SELSI",
+      "name": "Sequenced Language Scale for Infants",
+      "ageRangeMonths": "4-35",
+      "sheet": {
+        "id": "1tU74dHoIQDJh_vkHT9mid1N7wGaYN4MLEumjXNbDv2s",
+        "url": "https://docs.google.com/spreadsheets/d/1tU74dHoIQDJh_vkHT9mid1N7wGaYN4MLEumjXNbDv2s/edit?usp=sharing",
+        "detectedContent": [
+          "receptive/expressive mean and standard deviation tables",
+          "age-equivalent tables",
+          "age-band percentile tables",
+          "subdomain mean and standard deviation tables"
+        ]
+      },
+      "manual": {
+        "id": "1BfCujTTxf_HfMk6SRxtg1MEdLYLF4NGd",
+        "url": "https://drive.google.com/file/d/1BfCujTTxf_HfMk6SRxtg1MEdLYLF4NGd/view?usp=sharing"
+      }
+    },
+    {
+      "code": "PRES",
+      "name": "Preschool Receptive-Expressive Language Scale",
+      "ageRangeMonths": "24-77",
+      "sheet": {
+        "id": "12G4oN1_-q66mPcNovjdW5TiYaVhSMCuFxjvGdHTnvZA",
+        "url": "https://docs.google.com/spreadsheets/d/12G4oN1_-q66mPcNovjdW5TiYaVhSMCuFxjvGdHTnvZA/edit?usp=sharing",
+        "detectedContent": [
+          "age-band percentile conversion table",
+          "raw-score to language developmental age table",
+          "item score accumulation table"
+        ]
+      },
+      "manual": {
+        "id": "1jgN_jw9j4tbdU0KqKM6VY37Pmqfy9-G6",
+        "url": "https://drive.google.com/file/d/1jgN_jw9j4tbdU0KqKM6VY37Pmqfy9-G6/view?usp=sharing"
+      }
+    },
+    {
+      "code": "REVT",
+      "name": "Receptive and Expressive Vocabulary Test",
+      "ageRangeMonths": "30+",
+      "sheet": {
+        "id": "1lPkBLp-r3F_MKEH5nytw58NvTBfG5_ivh04dQBUuWkM",
+        "url": "https://docs.google.com/spreadsheets/d/1lPkBLp-r3F_MKEH5nytw58NvTBfG5_ivh04dQBUuWkM/edit?usp=sharing",
+        "detectedContent": [
+          "age-group mean and standard deviation table",
+          "raw-score to equivalent age table",
+          "age-group percentile table"
+        ]
+      },
+      "manual": {
+        "id": "1Igme3Ig9-S6YEQRwiorCML8gHwOVfuMu",
+        "url": "https://drive.google.com/file/d/1Igme3Ig9-S6YEQRwiorCML8gHwOVfuMu/view?usp=sharing",
+        "note": "Text extraction returned empty content; use PDF review or OCR before deriving rules."
+      }
+    }
+  ]
+}
