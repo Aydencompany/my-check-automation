@@ -2,25 +2,38 @@ name: Page Check
 
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+  workflow_dispatch:
 
 jobs:
   check-html:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 코드 가져오기
+      - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: index.html 파일 확인
-        run: test -f index.html
+      - name: Check required files
+        run: |
+          test -f index.html
+          test -f data/source-manifest.json
+          test -f data/schema.md
+          test -f docs/criteria-summary.md
 
-      - name: 주요 화면 문구 확인
+      - name: Validate source manifest JSON
+        run: python -m json.tool data/source-manifest.json
+
+      - name: Check assessment references
+        run: |
+          grep -q "SELSI" data/source-manifest.json
+          grep -q "PRES" data/source-manifest.json
+          grep -q "REVT" data/source-manifest.json
+          grep -q "SELSI" docs/criteria-summary.md
+          grep -q "PRES" docs/criteria-summary.md
+          grep -q "REVT" docs/criteria-summary.md
+
+      - name: Check page content
         run: |
           grep -q "언어검사 채점기" index.html
-          grep -q "아동 정보" index.html
-          grep -q "SELSI 원점수 입력" index.html
-          grep -q "결과 분석하기" index.html
-          grep -q "분석 리포트" index.html
+          grep -q "SELSI" index.html
+          grep -q "PRES" index.html
+          grep -q "REVT" index.html
