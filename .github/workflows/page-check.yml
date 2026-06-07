@@ -1,0 +1,26 @@
+name: Page Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check-html:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 코드 가져오기
+        uses: actions/checkout@v4
+
+      - name: index.html 파일 확인
+        run: test -f index.html
+
+      - name: 주요 화면 문구 확인
+        run: |
+          grep -q "언어검사 채점기" index.html
+          grep -q "아동 정보" index.html
+          grep -q "SELSI 원점수 입력" index.html
+          grep -q "결과 분석하기" index.html
+          grep -q "분석 리포트" index.html
